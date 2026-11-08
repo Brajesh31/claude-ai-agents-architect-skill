@@ -1,40 +1,91 @@
-# Ai Agents Architect
+# claude-ai-agents-architect-skill
+
+A Claude Code skill for designing controllable, reliable AI agent systems with tools, memory, planning, and multi-agent coordination.
 
 ## Overview
 
-This repository provides a focused Claude skill for ai agents architect. It organizes domain guidance into a reusable workflow to help produce consistent, practical results.
+This skill focuses on the architecture of agents that can take actions while remaining understandable and constrained. It helps define agent responsibilities, select tools, design memory, structure planning loops, and coordinate multiple agents when a single agent is insufficient.
 
-## Capabilities
+## Main Capabilities
 
-- Explains the skill's purpose, scope, and key concepts.
-- Provides structured instructions for common tasks.
-- Establishes a repeatable process and output expectations.
-- Includes supporting resources when supplied with the skill.
+- Design agent architecture and responsibilities.
+- Define tool and function-calling contracts.
+- Choose planning and reasoning strategies.
+- Design short-term and persistent memory.
+- Coordinate multiple agents.
+- Define permission and approval boundaries.
+- Handle failures and graceful degradation.
+- Evaluate agent behavior and reliability.
+- Debug tool selection and execution problems.
 
-## Repository Structure
+## Architecture Principles
 
-```text
-SKILL.md
+### Clear Responsibility
+
+Each agent should have a bounded objective and explicit non-goals. Avoid broad descriptions that overlap with every other agent.
+
+### Controlled Tool Use
+
+Expose only the tools required for the task. Validate arguments, restrict permissions, and define how failures are handled.
+
+### Deliberate Memory
+
+Store information only when it improves future task performance. Define retention, update, and retrieval behavior explicitly.
+
+### Bounded Planning
+
+Use clear task limits, step budgets, and stop conditions. Prevent uncontrolled loops and repeated tool calls.
+
+### Human Oversight
+
+Require confirmation for destructive, external, financial, or otherwise high-impact actions.
+
+## Installation
+
+```bash
+git clone https://github.com/Brajesh31/claude-ai-agents-architect-skill.git ~/.claude/skills/ai-agents-architect
 ```
 
-## Requirements
+## Usage
 
-- A Claude-compatible environment with skill support.
-- Relevant project context and domain knowledge.
-- Review of outputs before applying them to production work.
+Invoke the skill for agent architecture work:
 
-## Getting Started
+```text
+/ai-agents-architect
+```
 
-1. Read `SKILL.md` from beginning to end.
-2. Install or place this skill in the skills directory used by your Claude environment.
-3. Start a task that matches the skill's intended scope.
-4. Supply clear goals, constraints, and relevant context.
-5. Validate the result against your project's requirements.
+Provide the agent's objective, tools, data sources, memory needs, action permissions, and expected operating environment.
 
-## Recommended Workflow
+## Recommended Design Workflow
 
-Use the skill's instructions as the primary workflow. Keep inputs specific, review assumptions, and verify any recommendations that affect customers, production systems, or business decisions.
+1. Define the user problem and agent goal.
+2. Separate deterministic logic from model-driven decisions.
+3. Identify required tools and data access.
+4. Define agent state and memory boundaries.
+5. Choose a planning or execution loop.
+6. Set budgets, timeouts, and stop conditions.
+7. Add approval gates for risky actions.
+8. Design logs and evaluation metrics.
+9. Test realistic and adversarial scenarios.
+10. Expand autonomy only after reliability is demonstrated.
 
-## License
+## Evaluation Checklist
 
-MIT. See [LICENSE](LICENSE).
+- Agent goal is measurable.
+- Tool contracts are narrow and validated.
+- Memory has a clear purpose and retention policy.
+- Plans have bounded steps and execution time.
+- Errors are visible and recoverable.
+- Permissions match the intended task.
+- Human approval covers high-impact operations.
+- Multi-agent coordination has explicit ownership.
+- Evaluation includes task success and safety.
+
+## Repository Contents
+
+- `SKILL.md`: Main agent architecture instructions.
+- `README.md`: Design principles, workflow, and evaluation checklist.
+
+## Practical Principle
+
+An agent that can do everything is difficult to control and test. Start with a constrained system that reliably completes one valuable task, then expand its capabilities based on evidence.
