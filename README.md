@@ -89,3 +89,16 @@ Provide the agent's objective, tools, data sources, memory needs, action permiss
 ## Practical Principle
 
 An agent that can do everything is difficult to control and test. Start with a constrained system that reliably completes one valuable task, then expand its capabilities based on evidence.
+
+
+## Supporting Resources
+
+| File | Purpose |
+|---|---|
+| [Agent architecture brief](resources/agent-architecture-brief.md) | Define goals, scope, tools, memory, control limits, and human oversight. |
+| [Tool contract template](resources/tool-contract-template.md) | Specify schemas, authorization, side effects, retries, and failure behavior. |
+| [Agent reliability evaluation](resources/agent-reliability-evaluation.md) | Evaluate task success, tool behavior, prompt injection, recovery, latency, and cost. |
+
+## Third-party source and licensing
+
+The upstream metadata in [SKILL.md](SKILL.md) identifies the skill source as vibeship-spawner-skills under Apache License 2.0. See [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md) and [licenses/Apache-2.0.txt](licenses/Apache-2.0.txt). The root MIT License applies to original repository material and does not replace the upstream license for the skill content.
