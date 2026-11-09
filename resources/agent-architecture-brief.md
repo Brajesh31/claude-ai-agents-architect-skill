@@ -10,7 +10,7 @@
 ## Operating context
 - Runtime and deployment environment:
 - Model/provider:
-- Inputs and source-of-truth data:
+- Input data and authoritative records:
 - Expected outputs:
 - Data classification and retention requirements:
 
